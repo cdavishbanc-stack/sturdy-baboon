@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoldForte Flyer — Contractors</title>
+    <style>
+        /* Print-optimized: 8.5x11 single page */
+        @page { size: letter; margin: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Arial', 'Helvetica Neue', sans-serif; width: 8.5in; height: 11in; margin: 0 auto; background: #fff; color: #1a1a2e; overflow: hidden; }
+        
+        /* === HEADER === */
+        .flyer-header { background: #0f172a; padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: 800; color: #fff; }
+        .logo-accent { color: #2563eb; }
+        .header-tag { color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 500; }
+
+        /* === HERO STAT === */
+        .hero-stat { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); padding: 36px 40px; text-align: center; }
+        .hero-stat-number { font-size: 96px; font-weight: 900; color: #f59e0b; line-height: 1; letter-spacing: -3px; }
+        .hero-stat-label { font-size: 16px; color: rgba(255,255,255,0.9); margin-top: 6px; font-weight: 500; }
+        .hero-stat-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+        /* === HEADLINE === */
+        .headline { padding: 24px 40px 16px; text-align: center; }
+        .headline h1 { font-size: 26px; font-weight: 800; color: #0f172a; line-height: 1.2; }
+        .headline p { font-size: 13px; color: #6b7280; margin-top: 6px; }
+
+        /* === STATS ROW === */
+        .stats-row { display: flex; gap: 12px; padding: 0 40px 20px; }
+        .mini-stat { flex: 1; background: #f3f4f6; border-radius: 8px; padding: 16px 12px; text-align: center; border-top: 3px solid #2563eb; }
+        .mini-stat-number { font-size: 28px; font-weight: 900; color: #2563eb; }
+        .mini-stat-label { font-size: 10px; color: #374151; margin-top: 4px; line-height: 1.3; }
+        .mini-stat-source { font-size: 8px; color: #9ca3af; margin-top: 3px; }
+
+        /* === SOLUTION === */
+        .solution { padding: 20px 40px; }
+        .solution h2 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 12px; text-align: center; }
+        .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .solution-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #f8faff; border-radius: 6px; border-left: 3px solid #2563eb; }
+        .solution-icon { font-size: 16px; min-width: 20px; }
+        .solution-text { font-size: 11px; color: #374151; line-height: 1.3; }
+        .solution-text strong { color: #0f172a; }
+
+        /* === MATH BOX === */
+        .math-box { margin: 20px 40px; background: #0f172a; border-radius: 10px; padding: 20px 24px; color: #fff; }
+        .math-box h3 { font-size: 14px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #f59e0b; }
+        .math-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
+        .math-row:last-of-type { border-bottom: none; }
+        .math-value { font-weight: 700; color: #f59e0b; }
+        .math-result { text-align: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.2); }
+        .math-result-big { font-size: 20px; font-weight: 900; color: #10b981; }
+        .math-result-label { font-size: 11px; color: rgba(255,255,255,0.7); }
+
+        /* === CTA === */
+        .cta { padding: 20px 40px; text-align: center; }
+        .cta-box { background: #2563eb; border-radius: 10px; padding: 20px 24px; }
+        .cta-headline { font-size: 18px; font-weight: 800; color: #fff; }
+        .cta-sub { font-size: 12px; color: rgba(255,255,255,0.85); margin-top: 4px; }
+        .cta-details { display: flex; justify-content: center; gap: 24px; margin-top: 12px; }
+        .cta-detail { font-size: 11px; color: #fff; font-weight: 600; }
+
+        /* === FOOTER === */
+        .flyer-footer { background: #f3f4f6; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 0; left: 0; right: 0; }
+        .footer-left { font-size: 10px; color: #6b7280; }
+        .footer-right { font-size: 10px; color: #6b7280; text-align: right; }
+        .footer-right strong { color: #0f172a; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="flyer-header">
+        <div class="logo">Hold<span class="logo-accent">Forte</span></div>
+        <div class="header-tag">Virtual Backoffice for Contractors | Metro Detroit</div>
+    </div>
+
+    <!-- Hero Stat -->
+    <div class="hero-stat">
+        <div class="hero-stat-number">74.1%</div>
+        <div class="hero-stat-label">of your calls go unanswered. That's $90,000+ per year going to your competitor.</div>
+        <div class="hero-stat-sub">Source: PinkCallers, April 2026 — analysis of thousands of contractor calls</div>
+    </div>
+
+    <!-- Headline -->
+    <div class="headline">
+        <h1>83% of Customers Hire Whoever Answers First.<br>Is That You — or Your Competition?</h1>
+        <p>HoldForte answers every call, captures every lead, and books every job — while you're on the job.</p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-row">
+        <div class="mini-stat">
+            <div class="mini-stat-number">80%</div>
+            <div class="mini-stat-label">of callers who hit voicemail hang up & call your competitor</div>
+            <div class="mini-stat-source">Dialzara, 2025</div>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-number">42 hrs</div>
+            <div class="mini-stat-label">avg. time contractors take to respond to a new lead</div>
+            <div class="mini-stat-source">Ciela AI, 2026</div>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-number">391%</div>
+            <div class="mini-stat-label">more likely to convert at 90-second response time</div>
+            <div class="mini-stat-source">GetPerspective AI, 2026</div>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-number">73%</div>
+            <div class="mini-stat-label">of calls come after 5pm — when you've put the phone down</div>
+            <div class="mini-stat-source">PinkCallers, 2026</div>
+        </div>
+    </div>
+
+    <!-- Solution -->
+    <div class="solution">
+        <h2>What HoldForte Handles For You</h2>
+        <div class="solution-grid">
+            <div class="solution-item">
+                <div class="solution-icon">&#128222;</div>
+                <div class="solution-text"><strong>Live Phone Answering</strong> — under your company name, during business hours</div>
+            </div>
+            <div class="solution-item">
+                <div class="solution-icon">&#9889;</div>
+                <div class="solution-text"><strong>60-Second AI Text-Back</strong> — instant response to every missed call, 24/7</div>
+            </div>
+            <div class="solution-item">
+                <div class="solution-icon">&#128197;</div>
+                <div class="solution-text"><strong>Job Booking & Scheduling</strong> — appointments into Jobber, Housecall Pro, or your calendar</div>
+            </div>
+            <div class="solution-item">
+                <div class="solution-icon">&#128200;</div>
+                <div class="solution-text"><strong>Lead Capture & Follow-Up</strong> — multi-touch sequences until they book or say no</div>
+            </div>
+            <div class="solution-item">
+                <div class="solution-icon">&#128181;</div>
+                <div class="solution-text"><strong>Bookkeeping & Invoicing</strong> — QuickBooks sync, monthly P&L reports</div>
+            </div>
+            <div class="solution-item">
+                <div class="solution-icon">&#11088;</div>
+                <div class="solution-text"><strong>Review Management</strong> — auto-request after jobs + AI-drafted responses</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Math Box -->
+    <div class="math-box">
+        <h3>THE SIMPLE MATH</h3>
+        <div class="math-row">
+            <span>Missed calls per week (conservative):</span>
+            <span class="math-value">3–5</span>
+        </div>
+        <div class="math-row">
+            <span>Average job value:</span>
+            <span class="math-value">$400–$800</span>
+        </div>
+        <div class="math-row">
+            <span>Monthly revenue walking to competitor:</span>
+            <span class="math-value">$5,000–$16,000</span>
+        </div>
+        <div class="math-row">
+            <span>HoldForte monthly cost:</span>
+            <span class="math-value">$397–$997</span>
+        </div>
+        <div class="math-result">
+            <div class="math-result-big">5x–16x ROI</div>
+            <div class="math-result-label">One recovered job pays for the entire month</div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <div class="cta-box">
+            <div class="cta-headline">FREE MISSED CALL AUDIT</div>
+            <div class="cta-sub">We'll pull your call data and show you exactly how much revenue you've lost in the last 30 days.</div>
+            <div class="cta-details">
+                <div class="cta-detail">&#128222; (555) 555-5555</div>
+                <div class="cta-detail">&#127760; holdforte.com</div>
+                <div class="cta-detail">&#9993; hello@holdforte.com</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="flyer-footer">
+        <div class="footer-left">No contracts. Cancel anytime. Starts at $397/mo. Your customers never know we exist.</div>
+        <div class="footer-right"><strong>HoldForte</strong> | Metro Detroit, MI | HVAC &bull; Plumbing &bull; Electrical &bull; Roofing &bull; All Trades</div>
+    </div>
+</body>
+</html>

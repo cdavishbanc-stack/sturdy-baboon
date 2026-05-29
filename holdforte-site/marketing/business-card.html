@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HoldForte Business Cards</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Arial', sans-serif; padding: 0.5in; }
+        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { width: 3.5in; height: 2in; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; page-break-inside: avoid; }
+
+
+        /* Front */
+        .card-front { background: linear-gradient(135deg, #0f172a, #1e3a5f); padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-logo { font-size: 18px; font-weight: 800; color: #fff; }
+        .card-logo-accent { color: #2563eb; }
+        .card-tagline { font-size: 9px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .card-stat { text-align: center; margin: 8px 0; }
+        .card-stat-number { font-size: 32px; font-weight: 900; color: #f59e0b; }
+        .card-stat-label { font-size: 8.5px; color: rgba(255,255,255,0.8); }
+        .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+        .card-url { font-size: 10px; color: #2563eb; font-weight: 600; }
+        .card-service { font-size: 7.5px; color: rgba(255,255,255,0.5); text-align: right; max-width: 140px; }
+
+        /* Back */
+        .card-back { background: #fff; padding: 18px 20px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-name { font-size: 14px; font-weight: 700; color: #0f172a; }
+        .card-title { font-size: 9px; color: #6b7280; margin-top: 2px; }
+        .card-contact { margin-top: 8px; }
+        .card-contact-item { font-size: 9px; color: #374151; margin-bottom: 4px; }
+        .card-contact-item strong { color: #0f172a; }
+        .card-bullets { margin-top: 8px; padding-top: 8px; border-top: 1px solid #e5e7eb; }
+        .card-bullet { font-size: 8px; color: #6b7280; margin-bottom: 3px; }
+        .card-back-logo { font-size: 11px; font-weight: 800; color: #0f172a; text-align: right; }
+        .card-back-logo span { color: #2563eb; }
+
+        h2 { font-size: 16px; margin: 24px 0 12px; color: #0f172a; }
+        .instructions { font-size: 11px; color: #6b7280; margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+    <h2>FRONT OF CARD</h2>
+    <p class="instructions">Standard business card size: 3.5" x 2". Print at local printer or upload to Vistaprint/Moo.</p>
+
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-front">
+                <div>
+                    <div class="card-logo">Hold<span class="card-logo-accent">Forte</span></div>
+                    <div class="card-tagline">Virtual Backoffice for Contractors & Property Managers</div>
+                </div>
+                <div class="card-stat">
+                    <div class="card-stat-number">74.1%</div>
+                    <div class="card-stat-label">of your calls go unanswered. We fix that.</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-url">holdforte.com</div>
+                    <div class="card-service">Phone Answering | Dispatch<br>Booking | Lead Capture | 24/7</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>BACK OF CARD</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-back">
+                <div>
+                    <div class="card-name">[Your Name]</div>
+                    <div class="card-title">Founder | HoldForte</div>
+                    <div class="card-contact">
+                        <div class="card-contact-item"><strong>P:</strong> (555) 555-5555</div>
+                        <div class="card-contact-item"><strong>E:</strong> hello@holdforte.com</div>
+                        <div class="card-contact-item"><strong>W:</strong> holdforte.com</div>
+                        <div class="card-contact-item"><strong>L:</strong> Metro Detroit, MI</div>
+                    </div>
+                </div>
+                <div class="card-bullets">
+                    <div class="card-bullet">&#9989; Every call answered — live + AI in 60 seconds</div>
+                    <div class="card-bullet">&#9989; 83% of customers hire whoever responds first</div>
+                    <div class="card-bullet">&#9989; Free missed call audit — see your real numbers</div>
+                    <div class="card-bullet">&#9989; No contracts. Starts at $397/mo.</div>
+                </div>
+                <div class="card-back-logo">Hold<span>Forte</span></div>
+            </div>
+        </div>
+    </div>
+
+    <h2>ALTERNATE FRONT — PROPERTY MANAGER VERSION</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-front" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+                <div>
+                    <div class="card-logo">Hold<span class="card-logo-accent">Forte</span></div>
+                    <div class="card-tagline">Virtual Backoffice for Property Managers</div>
+                </div>
+                <div class="card-stat">
+                    <div class="card-stat-number">70%</div>
+                    <div class="card-stat-label">of tenant loyalty = responsiveness. We answer every call.</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-url">holdforte.com</div>
+                    <div class="card-service">Tenant Calls | Emergency Dispatch<br>Vendors | Compliance | Reporting</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+    <h2>FRONT OF CARD — CONTRACTOR VERSION</h2>
+    <p class="instructions">Standard business card size: 3.5" x 2". Print at local printer or upload to Vistaprint/Moo.</p>
+
+    <div class="card">
+        <div class="card-front">
+            <div>
+                <div class="card-logo">Hold<span class="card-logo-accent">Forte</span></div>
+                <div class="card-tagline">Virtual Backoffice for Contractors & Property Managers</div>
+            </div>
+            <div class="card-stat">
+                <div class="card-stat-number">74.1%</div>
+                <div class="card-stat-label">of your calls go unanswered. We fix that.</div>
+            </div>
+            <div class="card-bottom">
+                <div class="card-url">holdforte.com</div>
+                <div class="card-service">Phone Answering | Dispatch | Booking<br>Lead Capture | Bookkeeping | 24/7</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>BACK OF CARD</h2>
+
+    <div class="card">
+        <div class="card-back">
+            <div>
+                <div class="card-name">[Your Name]</div>
+                <div class="card-title">Founder | HoldForte</div>
+                <div class="card-contact">
+                    <div class="card-contact-item"><strong>P:</strong> (555) 555-5555</div>
+                    <div class="card-contact-item"><strong>E:</strong> hello@holdforte.com</div>
+                    <div class="card-contact-item"><strong>W:</strong> holdforte.com</div>
+                    <div class="card-contact-item"><strong>L:</strong> Metro Detroit, MI</div>
+                </div>
+            </div>
+            <div class="card-bullets">
+                <div class="card-bullet">&#9989; Every call answered — live + AI in 60 seconds</div>
+                <div class="card-bullet">&#9989; 83% of customers hire whoever responds first</div>
+                <div class="card-bullet">&#9989; Free missed call audit — see your real numbers</div>
+                <div class="card-bullet">&#9989; No contracts. Starts at $397/mo.</div>
+            </div>
+            <div class="card-back-logo">Hold<span>Forte</span></div>
+        </div>
+    </div>
+
+    <h2>FRONT OF CARD — PROPERTY MANAGER VERSION</h2>
+
+    <div class="card">
+        <div class="card-front" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+            <div>
+                <div class="card-logo">Hold<span class="card-logo-accent">Forte</span></div>
+                <div class="card-tagline">Virtual Backoffice for Property Managers</div>
+            </div>
+            <div class="card-stat">
+                <div class="card-stat-number">70%</div>
+                <div class="card-stat-label">of tenant loyalty = responsiveness. We answer every call.</div>
+            </div>
+            <div class="card-bottom">
+                <div class="card-url">holdforte.com</div>
+                <div class="card-service">Tenant Calls | Emergency Dispatch<br>Vendors | Compliance | Reporting</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

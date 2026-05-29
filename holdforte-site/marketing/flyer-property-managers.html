@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoldForte Flyer — Property Managers</title>
+    <style>
+        /* Print-optimized: 8.5x11 single page */
+        @page { size: letter; margin: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Arial', 'Helvetica Neue', sans-serif; width: 8.5in; height: 11in; margin: 0 auto; background: #fff; color: #1a1a2e; overflow: hidden; }
+        
+        /* === HEADER === */
+        .flyer-header { background: #1a1a2e; padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: 800; color: #fff; }
+        .logo-accent { color: #2563eb; }
+        .header-tag { color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 500; }
+
+        /* === HERO STAT === */
+        .hero-stat { background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%); padding: 32px 40px; text-align: center; }
+        .hero-stat-number { font-size: 88px; font-weight: 900; color: #f59e0b; line-height: 1; letter-spacing: -3px; }
+        .hero-stat-label { font-size: 16px; color: rgba(255,255,255,0.9); margin-top: 6px; font-weight: 500; }
+        .hero-stat-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+        /* === HEADLINE === */
+        .headline { padding: 22px 40px 14px; text-align: center; }
+        .headline h1 { font-size: 24px; font-weight: 800; color: #0f172a; line-height: 1.2; }
+        .headline p { font-size: 12px; color: #6b7280; margin-top: 6px; max-width: 550px; margin-left: auto; margin-right: auto; }
+
+        /* === STATS ROW === */
+        .stats-row { display: flex; gap: 12px; padding: 0 40px 18px; }
+        .mini-stat { flex: 1; background: #f3f4f6; border-radius: 8px; padding: 14px 10px; text-align: center; border-top: 3px solid #2563eb; }
+        .mini-stat-number { font-size: 26px; font-weight: 900; color: #2563eb; }
+        .mini-stat-label { font-size: 9.5px; color: #374151; margin-top: 4px; line-height: 1.3; }
+        .mini-stat-source { font-size: 8px; color: #9ca3af; margin-top: 3px; }
+
+        /* === PAIN + SOLUTION SPLIT === */
+        .split-section { display: flex; gap: 16px; padding: 0 40px 16px; }
+        .split-col { flex: 1; }
+        .split-col h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid; }
+        .pain-col h2 { color: #ef4444; border-color: #ef4444; }
+        .fix-col h2 { color: #10b981; border-color: #10b981; }
+        .split-item { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 8px; }
+        .split-icon { font-size: 12px; min-width: 16px; margin-top: 1px; }
+        .split-text { font-size: 10.5px; color: #374151; line-height: 1.35; }
+
+        /* === SERVICES GRID === */
+        .services { padding: 14px 40px; }
+        .services h2 { font-size: 14px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #0f172a; }
+        .services-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; }
+        .service-box { background: #f8faff; border-radius: 6px; padding: 10px 8px; text-align: center; border-top: 2px solid #2563eb; }
+        .service-box-icon { font-size: 18px; margin-bottom: 4px; }
+        .service-box-label { font-size: 9px; color: #374151; font-weight: 600; line-height: 1.2; }
+
+        /* === MATH BOX === */
+        .math-box { margin: 14px 40px; background: #1a1a2e; border-radius: 10px; padding: 18px 24px; color: #fff; }
+        .math-box h3 { font-size: 13px; font-weight: 700; text-align: center; margin-bottom: 10px; color: #f59e0b; }
+        .math-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 11px; }
+        .math-row:last-of-type { border-bottom: none; }
+        .math-value { font-weight: 700; color: #f59e0b; }
+        .math-result { text-align: center; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); }
+        .math-result-big { font-size: 18px; font-weight: 900; color: #10b981; }
+        .math-result-label { font-size: 10px; color: rgba(255,255,255,0.7); }
+
+        /* === CTA === */
+        .cta { padding: 16px 40px; text-align: center; }
+        .cta-box { background: #2563eb; border-radius: 10px; padding: 18px 24px; }
+        .cta-headline { font-size: 17px; font-weight: 800; color: #fff; }
+        .cta-sub { font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 4px; }
+        .cta-details { display: flex; justify-content: center; gap: 24px; margin-top: 10px; }
+        .cta-detail { font-size: 11px; color: #fff; font-weight: 600; }
+
+        /* === FOOTER === */
+        .flyer-footer { background: #f3f4f6; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 0; left: 0; right: 0; }
+        .footer-left { font-size: 9px; color: #6b7280; }
+        .footer-right { font-size: 9px; color: #6b7280; text-align: right; }
+        .footer-right strong { color: #0f172a; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="flyer-header">
+        <div class="logo">Hold<span class="logo-accent">Forte</span></div>
+        <div class="header-tag">Virtual Backoffice for Property Managers | Metro Detroit</div>
+    </div>
+
+    <!-- Hero Stat -->
+    <div class="hero-stat">
+        <div class="hero-stat-number">70%</div>
+        <div class="hero-stat-label">of tenant loyalty is tied to ONE thing: how fast you respond.</div>
+        <div class="hero-stat-sub">Source: Voctiv, 2025 — Property Management Industry Research</div>
+    </div>
+
+    <!-- Headline -->
+    <div class="headline">
+        <h1>Missed Calls = Lost Tenants. Lost Tenants = Lost Owners.<br>HoldForte Stops the Bleeding.</h1>
+        <p>We answer every tenant call, dispatch emergencies 24/7, coordinate vendors, create maintenance tickets, and report to owners — so you can manage more doors without more headcount.</p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-row">
+        <div class="mini-stat">
+            <div class="mini-stat-number">35–45%</div>
+            <div class="mini-stat-label">of PM calls missed while showing units or on-site</div>
+            <div class="mini-stat-source">Trillet AI, 2025</div>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-number">6.8 days</div>
+            <div class="mini-stat-label">"danger zone" — repair speed that triggers tenant turnover</div>
+            <div class="mini-stat-source">PropertyMgmt.com, 2026</div>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-number">$3,500</div>
+            <div class="mini-stat-label">average cost per unit turnover (vacancy + make-ready + re-lease)</div>
+            <div class="mini-stat-source">Industry Standard</div>
+        </div>
+        <div class="mini-stat">
+            <div class="mini-stat-number">51%</div>
+            <div class="mini-stat-label">of top PMs update tenants within 24hrs (most don't)</div>
+            <div class="mini-stat-source">PropertyMgmt.com, 2026</div>
+        </div>
+    </div>
+
+    <!-- Pain vs Solution -->
+    <div class="split-section">
+        <div class="split-col pain-col">
+            <h2>&#10060; Without HoldForte</h2>
+            <div class="split-item">
+                <div class="split-icon">&#128532;</div>
+                <div class="split-text">Tenant calls go to voicemail — frustration builds, reviews drop</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128561;</div>
+                <div class="split-text">After-hours emergencies go unhandled — legal exposure grows</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128165;</div>
+                <div class="split-text">Vendor coordination eats 40% of your day</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128203;</div>
+                <div class="split-text">Owner updates pile up — owners lose confidence</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#9888;&#65039;</div>
+                <div class="split-text">Expired COIs, missed inspections — lawsuits waiting</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128200;</div>
+                <div class="split-text">Can't add doors — no bandwidth to scale</div>
+            </div>
+        </div>
+        <div class="split-col fix-col">
+            <h2>&#9989; With HoldForte</h2>
+            <div class="split-item">
+                <div class="split-icon">&#128222;</div>
+                <div class="split-text">Every call answered, triaged, and routed — under your name</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#127464;</div>
+                <div class="split-text">24/7 emergency dispatch — vendor contacted, tenant updated</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128736;</div>
+                <div class="split-text">We become your vendor command center — book, confirm, follow up</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128202;</div>
+                <div class="split-text">Monthly owner reports drafted and sent — you approve, done</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#128220;</div>
+                <div class="split-text">Compliance tracked — COIs, leases, inspections, nothing expires</div>
+            </div>
+            <div class="split-item">
+                <div class="split-icon">&#127968;</div>
+                <div class="split-text">Scale without hiring — add 50 doors with zero new headcount</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="services">
+        <h2>Full-Service Operations Backbone</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <div class="service-box-icon">&#128222;</div>
+                <div class="service-box-label">Call Handling & Triage</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#127464;</div>
+                <div class="service-box-label">Emergency Dispatch 24/7</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#128736;</div>
+                <div class="service-box-label">Vendor Coordination</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#128203;</div>
+                <div class="service-box-label">Maintenance Ticketing</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#128202;</div>
+                <div class="service-box-label">Owner Reporting</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#11088;</div>
+                <div class="service-box-label">Review Protection</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#127968;</div>
+                <div class="service-box-label">Turnover Coordination</div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">&#128220;</div>
+                <div class="service-box-label">Compliance Tracking</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Math Box -->
+    <div class="math-box">
+        <h3>THE PORTFOLIO MATH (75 Units)</h3>
+        <div class="math-row">
+            <span>Tenants lost per quarter to slow response:</span>
+            <span class="math-value">2</span>
+        </div>
+        <div class="math-row">
+            <span>Turnover cost per unit:</span>
+            <span class="math-value">$3,500</span>
+        </div>
+        <div class="math-row">
+            <span>Annual preventable turnover loss:</span>
+            <span class="math-value">$28,000</span>
+        </div>
+        <div class="math-row">
+            <span>HoldForte Professional plan:</span>
+            <span class="math-value">$997/mo ($13/unit)</span>
+        </div>
+        <div class="math-result">
+            <div class="math-result-big">2.3x ROI — Pays for Itself in Q1</div>
+            <div class="math-result-label">One prevented turnover per quarter = full year of service covered</div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <div class="cta-box">
+            <div class="cta-headline">SCHEDULE A FREE 30-MINUTE DEMO</div>
+            <div class="cta-sub">See how HoldForte integrates with AppFolio, Buildium, Rent Manager & Propertyware</div>
+            <div class="cta-details">
+                <div class="cta-detail">&#128222; (555) 555-5555</div>
+                <div class="cta-detail">&#127760; holdforte.com</div>
+                <div class="cta-detail">&#9993; hello@holdforte.com</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="flyer-footer">
+        <div class="footer-left">No contracts. No payroll. No HR headaches. Predictable monthly cost. Cancel anytime.</div>
+        <div class="footer-right"><strong>HoldForte</strong> | Metro Detroit, MI | Your Operations Backbone</div>
+    </div>
+</body>
+</html>
